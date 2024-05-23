@@ -22,9 +22,9 @@ namespace moduleFour
                 Console.WriteLine("Your color is red!");
             }
 
-            else if (color == "green")
+            else if (color == "blue")
             {
-                Console.BackgroundColor = ConsoleColor.Green;
+                Console.BackgroundColor = ConsoleColor.Blue;
                 Console.ForegroundColor = ConsoleColor.Black;
 
                 Console.WriteLine("Your color is green!");
