@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Linq;
 
 namespace moduleFour
 {
@@ -57,8 +59,7 @@ namespace moduleFour
             */
 
             //Задание по массивам
-
-            Console.WriteLine("Введите своё имя");
+            /*Console.WriteLine("Введите своё имя");
 
             var name = Console.ReadLine();
 
@@ -69,7 +70,75 @@ namespace moduleFour
                 Console.Write(name[ch] + " ");
             }
 
-            Console.WriteLine("Последняя буква вашего имени: {0}", name[name.Length - 1]);
+            Console.WriteLine("Последняя буква вашего имени: {0}", name[name.Length - 1]);*/
+
+            //Вывод по стоолбцам и стррокам
+            /*int[,] array = { { 1, 2, 3 }, { 5, 6, 7 }, { 8, 9, 10 }, { 11, 12, 13 } };
+
+            for (int i = 0; i < array.GetUpperBound(1) + 1; i++)
+            {
+                for (int k = 0; k < array.GetUpperBound(0) + 1; k++)
+                    Console.Write(array[k, i] + " ");
+
+                Console.WriteLine();
+            }*/
+
+            //Сложение элементов массива
+            /*var arr = new int[] { 5, 6, 9, 1, 2, 3, 4 };
+            int temp=0;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                temp = arr[i] + temp;
+            }
+            Console.Write(temp);*/
+
+            //Перебор зубчатого массива
+            /*int[][] array = new int[3][];
+            array[0] = new int[2] { 1, 2 };
+            array[1] = new int[3] { 1, 2, 3 };
+            array[2] = new int[5] { 1, 2, 3, 4, 5 };
+
+            foreach (var num in array)
+            {
+                foreach (var item in num)
+                {
+                    Console.Write(item + " ");
+                }
+            }*/
+
+            //Нахождение положительных чисел
+            int[,] arr = { { -5, 6, 9, 1, 2, -3 }, { -8, 8, 1, 1, 2, -3 } };
+            int temp = 0;
+
+            for (int i = 0; i < arr.GetUpperBound(0) + 1; i++)
+            {
+                for (int j = 0; j < arr.GetUpperBound(1) + 1; j++)
+                {
+                    for (int k = j + 1; k < arr.GetUpperBound(1)+1; k++)
+                    {
+                        if (arr[i, j] > arr[i, k])
+                        {
+                            temp = arr[i, k];
+                            arr[i,k] = arr[i,j];
+                            arr[i,j] = temp;
+                        }
+                    }
+                    Console.Write(arr[i, j] + " ");
+                }
+                Console.WriteLine();
+            }
+
+            /*for (int i = 0; i < arr.GetUpperBound(0)+1; i++)
+            {
+                for (int j = 0; j < arr.GetUpperBound(1) + 1; j++)
+                {
+                    if (arr[i,j] > 0)
+                    {
+                        num++;
+                    }
+                }
+            }
+            Console.Write(num);*/
 
             Console.ReadKey();
         }
