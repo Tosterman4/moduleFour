@@ -13,6 +13,7 @@ namespace moduleFour
         static void Main(string[] args)
         {
             //Задание по циклам
+
             /*Console.WriteLine("Напишите свой любимый цвет на английском с маленькой буквы");
             int t = 0;
             do
@@ -59,6 +60,7 @@ namespace moduleFour
             */
 
             //Задание по массивам
+
             /*Console.WriteLine("Введите своё имя");
 
             var name = Console.ReadLine();
@@ -84,6 +86,7 @@ namespace moduleFour
             }*/
 
             //Сложение элементов массива
+
             /*var arr = new int[] { 5, 6, 9, 1, 2, 3, 4 };
             int temp=0;
             for (int i = 0; i < arr.Length; i++)
@@ -107,7 +110,8 @@ namespace moduleFour
             }*/
 
             //Нахождение положительных чисел
-            int[,] arr = { { -5, 6, 9, 1, 2, -3 }, { -8, 8, 1, 1, 2, -3 } };
+
+            /*int[,] arr = { { -5, 6, 9, 1, 2, -3 }, { -8, 8, 1, 1, 2, -3 } };
             int temp = 0;
 
             for (int i = 0; i < arr.GetUpperBound(0) + 1; i++)
@@ -126,19 +130,43 @@ namespace moduleFour
                     Console.Write(arr[i, j] + " ");
                 }
                 Console.WriteLine();
-            }
+            }*/
 
-            /*for (int i = 0; i < arr.GetUpperBound(0)+1; i++)
+            //Практическое задание
+
+            (string firstName,string secondName,string login,int loginLength, bool pet, int age, string[] favcolors) user;
+
+            for (int j = 0;j<3;j++)
             {
-                for (int j = 0; j < arr.GetUpperBound(1) + 1; j++)
+                Console.WriteLine("Введите имя");
+                user.Item1 = Console.ReadLine();
+                Console.WriteLine("Введите фамилию");
+                user.Item2 = Console.ReadLine();
+                Console.WriteLine("Введите логин");
+                user.Item3 = Console.ReadLine();
+
+                user.Item4 = user.login.Length;
+
+                Console.WriteLine("Есть ли у вас животные? Да или Нет");
+
+                string resultPet = Console.ReadLine();
+                if (resultPet == "Да" || resultPet == "да")
                 {
-                    if (arr[i,j] > 0)
-                    {
-                        num++;
-                    }
+                    user.Item5 = true;
+                }
+                else user.Item5 = false;
+
+                Console.WriteLine("Введите возраст пользователя");
+                user.Item6 = Convert.ToInt32(Console.ReadLine());
+
+                user.Item7 = new string[3];
+
+                Console.WriteLine("Введите три любимых цвета пользователя");
+                for (int i = 0; i < user.favcolors.Length; i++)
+                {
+                    user.favcolors[i] = Console.ReadLine();
                 }
             }
-            Console.Write(num);*/
 
             Console.ReadKey();
         }
